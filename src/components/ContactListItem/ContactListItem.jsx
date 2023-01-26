@@ -1,8 +1,11 @@
-import css from './ContactListItem.module.css';
 import PropTypes from 'prop-types';
 import { BsFillCircleFill } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsSlice';
+import css from './ContactListItem.module.css';
 
-const ContactListItem = ({ id, name, number, deleteContact }) => {
+const ContactListItem = ({ id, name, number }) => {
+  const dispatch = useDispatch();
   return (
     <li className={css.listItem}>
       <div>
@@ -19,7 +22,7 @@ const ContactListItem = ({ id, name, number, deleteContact }) => {
       <button
         type="button"
         onClick={() => {
-          deleteContact(id);
+          dispatch(deleteContact({ id: id }));
         }}
       >
         Delete
@@ -32,7 +35,6 @@ ContactListItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  deleteContact: PropTypes.func.isRequired,
 };
 
 export default ContactListItem;
