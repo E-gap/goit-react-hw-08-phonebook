@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  display: block;
+}
+.block label {
+  font-size: 20px;
+}
+.block button {
+  background-color: yellowgreen;
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+}

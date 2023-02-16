@@ -1,6 +1,8 @@
-import ContactForm from './ContactForm/ContactForm.jsx';
-import ContactList from './ContactList/ContactList.jsx';
-import Filter from './Filter/Filter.jsx';
+import ContactForm from './ContactForm/ContactForm';
+import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
+import Register from '../pages/Register/Register';
+import Login from '../pages/Login/Login';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/contactsSlice';
@@ -25,6 +27,8 @@ export const App = () => {
         paddingLeft: '50px',
       }}
     >
+      <Register />
+      <Login />
       <h2>Phonebook</h2>
       <ContactForm />
       <h2>Contacts</h2>
