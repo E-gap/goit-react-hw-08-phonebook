@@ -44,11 +44,11 @@ export const addContacts = createAsyncThunk(
   async function (contact, { rejectWithValue, dispatch, getState }) {
     const stateContacts = getState().contacts.contacts;
 
-    const array = stateContacts.filter(
+    const isCoincidence = stateContacts.find(
       item => item.name.toLowerCase() === contact.name.toLowerCase()
     );
 
-    if (array.length > 0) {
+    if (isCoincidence) {
       alert(`${contact.name} is already in contacts`);
       return;
     }
