@@ -38,10 +38,14 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkApi) => {
   }
 });
 
-/* const authOperations = {
-  register,
-  login,
-  logout,
-};
-
-export default authOperations; */
+export const refresh = createAsyncThunk('auth/current', async (_, thunkApi) => {
+  const { token } = thunkApi.getState().auth;
+  if (!token) return thunkApi.rejectWithValue('No valid token');
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  try {
+    const { data } = await axios.get('/users/current');
+    return data;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});

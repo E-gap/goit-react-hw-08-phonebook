@@ -1,8 +1,11 @@
 import css from './UserMenu.module.css';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/auth/authOperations';
 
 const UserMenu = () => {
+  const dispatch = useDispatch();
   const handleClick = () => {
-    console.log('dfdff');
+    dispatch(logout());
   };
   return (
     <div className={css.usermenu}>
