@@ -2,6 +2,8 @@ import { Outlet, NavLink } from 'react-router-dom';
 import css from './Layout.module.css';
 import AuthMenu from '../AuthMenu/AuthMenu';
 import UserMenu from '../UserMenu/UserMenu';
+import { Suspense } from 'react';
+import Loader from '../Loader/Loader';
 
 const Layout = () => {
   return (
@@ -19,7 +21,9 @@ const Layout = () => {
           <UserMenu />
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
