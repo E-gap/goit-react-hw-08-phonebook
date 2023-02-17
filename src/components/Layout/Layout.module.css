@@ -1,0 +1,18 @@
+.linkList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 100px;
+  background-color: aqua;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:global(.active) {
+  color: red;
+  text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+.usermenu {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
