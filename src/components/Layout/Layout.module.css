@@ -1,11 +1,17 @@
-.linkList {
-  list-style: none;
+.linkLayout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-right: 100px;
   padding-left: 100px;
   background-color: aqua;
+}
+
+.linkLogin {
+  justify-content: space-between;
+}
+
+.linkNotLogin {
+  justify-content: center;
 }
 
 .link {
