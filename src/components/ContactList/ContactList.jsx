@@ -14,14 +14,9 @@ const ContactList = () => {
   const filter = useSelector(selectFilter);
   const isLogin = useSelector(selectIsLogin);
 
-  const filterContacts = () => {
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-    return filteredContacts;
-  };
-
-  const filteredContacts = filterContacts();
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   const renderFilteredContacts = filteredContacts.length > 0 || isLoading;
   const notFilteredContacts =
