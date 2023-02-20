@@ -1,6 +1,5 @@
 .linkLayout {
   display: flex;
-
   align-items: center;
   padding: 5px 100px;
   background-color: aqua;
@@ -16,6 +15,7 @@
 
 .link {
   text-decoration: none;
+  padding-bottom: 10px;
 }
 
 .link:global(.active) {
