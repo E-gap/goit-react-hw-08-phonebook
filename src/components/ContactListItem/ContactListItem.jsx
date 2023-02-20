@@ -8,12 +8,13 @@ const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
     <li className={css.listItem}>
-      <div>
+      <div className={css.text}>
         <span className={css.icon}>
           <BsFillCircleFill
             style={{
-              height: '20px',
-              width: '20px',
+              height: '15px',
+              width: '15px',
+              fill: 'green',
             }}
           />
         </span>

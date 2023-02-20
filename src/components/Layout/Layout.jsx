@@ -5,13 +5,14 @@ import UserMenu from '../UserMenu/UserMenu';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
 import { useSelector } from 'react-redux';
-import { selectIsLogin } from '../../redux/selectors';
+import { selectIsLogin, selectIsRefreshing } from '../../redux/selectors';
 
 const Layout = () => {
-  const isLogin  = useSelector(selectIsLogin);
+  const isLogin = useSelector(selectIsLogin);
+  const isRefreshing = useSelector(selectIsRefreshing);
   return (
     <div>
-      {isLogin && (
+      {isLogin && !isRefreshing && (
         <div className={`${css.linkLogin} ${css.linkLayout}`}>
           <NavLink to="contacts" className={`${css.link} ${css.linkContacts}`}>
             Contacts
@@ -19,7 +20,7 @@ const Layout = () => {
           <UserMenu />
         </div>
       )}
-      {!isLogin && (
+      {!isLogin && !isRefreshing && (
         <div className={`${css.linkNotLogin} ${css.linkLayout}`}>
           <AuthMenu />
         </div>

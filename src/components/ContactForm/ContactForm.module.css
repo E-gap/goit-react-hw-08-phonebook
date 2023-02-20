@@ -1,9 +1,10 @@
 .contactForm {
-  border: 2px solid grey;
+  border: 2px solid aqua;
   width: 500px;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  box-shadow: 0px 0px 20px 0px aqua;
 }
 
 .block {
@@ -11,13 +12,21 @@
 }
 
 .block label {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .block input {
-  border: 2px solid grey;
-  font-size: 30px;
+  margin-top: 10px;
+  border: 3px solid grey;
+  font-size: 25px;
   margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.block input:hover,
+.block input:focus {
+  border: 3px solid green;
+  outline: none;
 }
 
 .block button {
@@ -26,4 +35,11 @@
   border-radius: 20px;
   padding: 5px;
   cursor: pointer;
+  border: 1px solid aqua;
+}
+
+.block button:hover,
+.block button:focus {
+  background-color: green;
+  border: 1px solid green;
 }

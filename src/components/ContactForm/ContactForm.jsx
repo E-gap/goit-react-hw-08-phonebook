@@ -33,7 +33,7 @@ const ContactForm = () => {
       </label>
 
       <label className={css.block}>
-        phone
+        Phone Number
         <input
           className={css.block}
           type="tel"

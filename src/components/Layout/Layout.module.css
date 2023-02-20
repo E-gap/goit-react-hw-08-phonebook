@@ -1,8 +1,8 @@
 .linkLayout {
   display: flex;
+
   align-items: center;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding: 5px 100px;
   background-color: aqua;
 }
 

@@ -4,8 +4,28 @@
 }
 
 .name {
-  font-size: 20px;
+  font-size: 40px;
   margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  animation-name: changeName;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+  color: green;
+  text-decoration: underline;
+}
+
+@keyframes changeName {
+  0% {
+    scale: 0.3;
+  }
+
+  50% {
+    scale: 0.5;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 .button {
@@ -13,4 +33,12 @@
   padding: 5px 10px;
   border-radius: 20px;
   cursor: pointer;
+  background-color: antiquewhite;
+  border: 1px solid antiquewhite;
+}
+
+.button:hover,
+.button:focus {
+  background-color: red;
+  border: 1px solid red;
 }

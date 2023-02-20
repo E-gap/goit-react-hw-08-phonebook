@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/contactsOperations';
 import { selectIsLoading, selectError } from '../../redux/selectors';
+import css from './Contacts.module.css';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -26,9 +27,9 @@ export const Contacts = () => {
         paddingLeft: '50px',
       }}
     >
-      <h2>Phonebook</h2>
+      <p className={css.text}>Phonebook</p>
       <ContactForm />
-      <h2>Contacts</h2>
+      <p className={css.text}>Contacts</p>
       <Filter />
       {isLoading && <h2>Loading contacts....</h2>}
       {error ? (
