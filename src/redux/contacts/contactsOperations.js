@@ -29,7 +29,7 @@ export const addContacts = createAsyncThunk(
 
     if (isCoincidence) {
       alert(`${contact.name} is already in contacts`);
-      return;
+      throw new Error("Can't add contact. Server Error");
     }
 
     try {
