@@ -7,8 +7,8 @@ const AuthMenu = () => {
       <NavLink to="register" className={`${css.link} ${css.linkRegister}`}>
         Register
       </NavLink>
-      <NavLink to="login" className={css.link}>
-        Login
+      <NavLink to="/" className={css.link}>
+        Log in
       </NavLink>
     </div>
   );

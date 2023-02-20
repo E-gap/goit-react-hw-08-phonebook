@@ -50,7 +50,7 @@ const Login = () => {
           required
         ></input>
       </label>
-      <button type="Submit">Register</button>
+      <button type="Submit">Log in</button>
     </form>
   );
 };
