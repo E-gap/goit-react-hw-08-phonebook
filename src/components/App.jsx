@@ -6,6 +6,7 @@ import { refresh } from '../redux/auth/authOperations';
 import { useSelector } from 'react-redux';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { selectIsRefreshing } from '../redux/selectors';
 
 const Register = lazy(() => import('../pages/Register/Register'));
 const Login = lazy(() => import('../pages/Login/Login'));
@@ -14,7 +15,7 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing } = useSelector(state => state.auth);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refresh());

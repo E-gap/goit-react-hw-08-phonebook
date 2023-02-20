@@ -1,12 +1,18 @@
 import ContactListItem from '../ContactListItem/ContactListItem.jsx';
 import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
+import {
+  selectContacts,
+  selectIsLoading,
+  selectFilter,
+  selectIsLogin,
+} from '../../redux/selectors';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts.contacts);
-  const isLoading = useSelector(state => state.contacts.isLoading);
-  const filter = useSelector(state => state.filter.filter);
-  const isLogin = useSelector(state => state.auth.isLogin);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const filter = useSelector(selectFilter);
+  const isLogin = useSelector(selectIsLogin);
 
   const filterContacts = () => {
     const filteredContacts = contacts.filter(contact =>

@@ -5,9 +5,10 @@ import UserMenu from '../UserMenu/UserMenu';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
 import { useSelector } from 'react-redux';
+import { selectIsLogin } from '../../redux/selectors';
 
 const Layout = () => {
-  const { isLogin } = useSelector(state => state.auth);
+  const isLogin  = useSelector(selectIsLogin);
   return (
     <div>
       {isLogin && (
