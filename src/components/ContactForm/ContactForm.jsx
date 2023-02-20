@@ -9,7 +9,7 @@ const ContactForm = () => {
     event.preventDefault();
     const contact = {
       name: event.target.elements.name.value,
-      phone: event.target.elements.phone.value,
+      number: event.target.elements.phone.value,
     };
     dispatch(addContacts(contact));
     event.target.reset();

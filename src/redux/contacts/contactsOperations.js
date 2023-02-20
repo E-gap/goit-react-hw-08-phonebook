@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { deleteContact, addContact } from './contactsSlice';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
@@ -8,27 +7,11 @@ export const fetchContacts = createAsyncThunk(
     try {
       const response = await axios.get('/contacts');
 
-      if (!response.ok) {
+      if (response.statusText !== 'OK') {
         throw new Error('Server Error');
       }
 
-      return response;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const deleteContacts = createAsyncThunk(
-  'contacts/deleteContacts',
-  async function (id, { rejectWithValue, dispatch }) {
-    try {
-      const response = await axios.delete(`/contacts/${id}`);
-
-      if (!response.ok) {
-        throw new Error("Can't delete contact. Server Error");
-      }
-      dispatch(deleteContact({ id }));
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -37,7 +20,7 @@ export const deleteContacts = createAsyncThunk(
 
 export const addContacts = createAsyncThunk(
   'contacts/addContacts',
-  async function (contact, { rejectWithValue, dispatch, getState }) {
+  async function (contact, { rejectWithValue, getState }) {
     const stateContacts = getState().contacts.contacts;
 
     const isCoincidence = stateContacts.find(
@@ -51,15 +34,30 @@ export const addContacts = createAsyncThunk(
 
     try {
       const response = await axios.post('/contacts', {
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify(contact),
+        name: contact.name,
+        number: contact.number,
       });
 
-      if (!response.ok) {
+      if (response.statusText !== 'Created') {
         throw new Error("Can't add contact. Server Error");
       }
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-      dispatch(addContact(response));
+export const deleteContacts = createAsyncThunk(
+  'contacts/deleteContacts',
+  async function (id, { rejectWithValue }) {
+    try {
+      const response = await axios.delete(`/contacts/${id}`);
+
+      if (response.statusText !== 'OK') {
+        throw new Error("Can't delete contact. Server Error");
+      }
+      return response.data.id;
     } catch (error) {
       return rejectWithValue(error.message);
     }
