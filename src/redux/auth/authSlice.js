@@ -33,7 +33,7 @@ const authSlice = createSlice({
       })
       .addCase(logout.rejected, (state, action) => state)
       .addCase(refresh.fulfilled, (state, action) => {
-        state.user = action.payload.user;
+        state.user = action.payload;
         state.isLogin = true;
       })
       .addCase(refresh.rejected, (state, action) => state),
