@@ -1,13 +1,13 @@
 .filterLabel {
   display: block;
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .filterInput {
   margin-top: 10px;
   display: block;
   border: 3px solid grey;
-  font-size: 25px;
+  font-size: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
   outline: none;

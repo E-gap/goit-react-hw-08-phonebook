@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
@@ -41,6 +42,12 @@ export const addContacts = createAsyncThunk(
       if (response.statusText !== 'Created') {
         throw new Error("Can't add contact. Server Error");
       }
+      Notiflix.Notify.success('The new contact has been added', {
+        width: '500px',
+        position: 'center-center',
+        fontSize: '25px',
+        timeout: '1500',
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -57,6 +64,12 @@ export const deleteContacts = createAsyncThunk(
       if (response.statusText !== 'OK') {
         throw new Error("Can't delete contact. Server Error");
       }
+      Notiflix.Notify.warning('The new contact has been deleted', {
+        width: '500px',
+        position: 'center-center',
+        fontSize: '25px',
+        timeout: '1500',
+      });
       return response.data.id;
     } catch (error) {
       return rejectWithValue(error.message);

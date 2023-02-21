@@ -28,7 +28,7 @@ export const App = () => {
           height: '100vh',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 40,
+          fontSize: 30,
           color: '#010101',
           paddingLeft: '50px',
           paddingRight: '50px',

@@ -1,6 +1,6 @@
 .contactForm {
   border: 2px solid aqua;
-  width: 500px;
+  width: 300px;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -12,13 +12,13 @@
 }
 
 .block label {
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .block input {
   margin-top: 10px;
   border: 3px solid grey;
-  font-size: 25px;
+  font-size: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -31,7 +31,7 @@
 
 .block button {
   background-color: aqua;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 20px;
   padding: 5px;
   cursor: pointer;

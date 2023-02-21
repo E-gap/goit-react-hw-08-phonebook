@@ -2,14 +2,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 1px dotted green;
   padding: 5px;
-  width: 900px;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px green;
+  transition: scale 500ms;
+}
+
+.listItem:hover {
+  scale: 1.05;
 }
 
 .listItem button {
-  font-size: 25px;
+  font-size: 15px;
   border-radius: 10px;
   padding: 5px;
   margin-left: 30px;
@@ -17,10 +24,11 @@
 }
 
 .icon {
-  margin-right: 20px;
-  display: inline-block;
+  margin-right: 10px;
+  display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 2px;
+  justify-content: center;
 }
 
 .buttonDelete {
@@ -28,5 +36,7 @@
 }
 
 .text {
-  font-size: 25px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }

@@ -7,11 +7,35 @@
   display: block;
 }
 .block label {
-  font-size: 20px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
+
+.block input {
+  margin-top: 10px;
+  border: 3px solid grey;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.block input:hover,
+.block input:focus {
+  border: 3px solid green;
+  outline: none;
+}
+
 .block button {
-  background-color: yellowgreen;
-  font-size: 20px;
+  background-color: aqua;
+  font-size: 15px;
+  border-radius: 20px;
   padding: 5px;
   cursor: pointer;
+  border: 1px solid aqua;
+}
+
+.block button:hover,
+.block button:focus {
+  background-color: green;
+  border: 1px solid green;
 }

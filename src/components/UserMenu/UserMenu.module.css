@@ -4,7 +4,7 @@
 }
 
 .name {
-  font-size: 40px;
+  font-size: 30px;
   margin-right: 5px;
   margin-top: 0;
   margin-bottom: 0;
@@ -34,7 +34,7 @@
 }
 
 .button {
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px 10px;
   border-radius: 20px;
   cursor: pointer;
