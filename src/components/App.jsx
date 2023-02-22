@@ -23,17 +23,7 @@ export const App = () => {
 
   return (
     !isRefreshing && (
-      <div
-        style={{
-          height: '100vh',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 30,
-          color: '#010101',
-          paddingLeft: '50px',
-          paddingRight: '50px',
-        }}
-      >
+      <div>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route

@@ -13,7 +13,9 @@ const Layout = () => {
   return (
     <div>
       {isLogin && !isRefreshing && (
-        <div className={`${css.linkLogin} ${css.linkLayout} ${css.layout}`}>
+        <div
+          className={`${css.linkLogin} ${css.linkLayout} ${css.layout} ${css.container}`}
+        >
           <NavLink to="contacts" className={`${css.link} ${css.linkContacts}`}>
             Contacts
           </NavLink>
@@ -21,7 +23,9 @@ const Layout = () => {
         </div>
       )}
       {!isLogin && !isRefreshing && (
-        <div className={`${css.linkNotLogin} ${css.linkLayout} ${css.layout}`}>
+        <div
+          className={`${css.linkNotLogin} ${css.linkLayout} ${css.layout} ${css.container}`}
+        >
           <AuthMenu />
         </div>
       )}

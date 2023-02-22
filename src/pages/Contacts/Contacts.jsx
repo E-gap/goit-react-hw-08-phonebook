@@ -17,16 +17,7 @@ export const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        paddingLeft: '50px',
-      }}
-    >
+    <div className={`${css.contacts} ${css.container}`}>
       <p className={css.text}>Phonebook</p>
       <ContactForm />
       <p className={css.text}>Contacts</p>

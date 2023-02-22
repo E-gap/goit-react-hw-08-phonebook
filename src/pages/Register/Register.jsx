@@ -31,7 +31,10 @@ const Register = () => {
   };
 
   return (
-    <form className={`${css.form} ${css.block}`} onSubmit={handleSubmit}>
+    <form
+      className={`${css.form} ${css.block} ${css.container}`}
+      onSubmit={handleSubmit}
+    >
       <label className={css.block}>
         Name
         <input
